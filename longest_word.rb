@@ -32,13 +32,16 @@ end
 	
 # end
 def scoreGenerator(englishWord, validWord, user_guess, time, grid)
-	
-	if user_guess == '' 
-		return {"error" => "You have to type something!!!", "score" => 0 }
-	elsif !englishWord && !validWord
-		return {"error" => "Wrong!!! Entry not in grid or not an English word.", "score" => 0 }
-	else
+	puts englishWord
+	puts validWord
+	if englishWord && validWord
 		result = time/60 + user_guess.length/grid.length
 		return "This is you score: #{result} for #{user_guess}"
+	elsif user_guess == '' 
+		return {"error" => "You have to type something!!!", "score" => 0 }
+	elsif !englishWord
+		return {"error" => "Wrong!!!Not an English word.", "score" => 0 }
+	elsif !validWord
+		return {"error" => "Wrong!!!Not in the grid or you are using a letter more times then its allowed.", "score" => 0 }
 	end
 end

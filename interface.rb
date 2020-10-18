@@ -7,7 +7,7 @@ puts "#{grid}"
 
 puts "What is the longest word?"
 start_time = Time.now
-user_guess = gets.chomp
+user_guess = gets.chomp.upcase
 end_time = Time.now
 time = end_time - start_time
 
